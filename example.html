@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ezrouter example</title>
+</head>
+<body>
+<a href="#/index">index</a>
+<a href="#/index/1">index1</a>
+<a href="#/index/2">index2</a>
+<a href="#/never_gonna_give_you_up">never_gonna_give_you_up</a>
+</body>
+<script src="ezrouter.js" type="text/javascript"></script>
+<script>
+    ezrouter('/index', () => {
+        alert('hello,welcome to index page');
+    });
+    ezrouter('/index/:id', (params) => {
+        alert('you are now at index'+params.id);
+    })
+    ezrouter('/never_gonna_give_you_up', () => {
+        alert('Never gonna say goodbye');
+    });
+</script>
+</html>
